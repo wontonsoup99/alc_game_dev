@@ -10,7 +10,7 @@ public class OutofBounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Time.timeScale = 0;
     }
 
     // Update is called once per frame
@@ -23,7 +23,9 @@ public class OutofBounds : MonoBehaviour
 
         if(transform.position.z < lowerBounds)
         {
+            //Debug.Log("Game Over");
             Destroy(gameObject);
+            //Time.timeScale = 0;
         }
         
     }
