@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
     public float speed = 10.0f;
-    public float xRange = 20.0f;
+    public int xRange = 20;
     public GameObject ProjectileFood;
     
     // Start is called before the first frame update
@@ -26,13 +26,13 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
-        if (transform.position.x > xRange)
+        else if (transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
         if (Input.GetKeyDown(KeyCode.Space))
 
-            //launch a proejctile from the player
+            //launch a projectile from the player
             Instantiate(ProjectileFood,transform.position,ProjectileFood.transform.rotation);
     }
 }
