@@ -8,16 +8,11 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     public int xRange = 20;
     public GameObject ProjectileFood;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   
 
     // Update is called once per frame
     void Update()
-    {
+    {   //allows control of player using arrow keys and space bar
         horizontalInput = Input.GetAxis("Horizontal");
 
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
