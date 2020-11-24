@@ -15,7 +15,7 @@ public class OutofBounds : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   //sets top and bottom boundaries for sandwich and animals
         if(transform.position.z > lowerBound)
         {
             Destroy(gameObject);

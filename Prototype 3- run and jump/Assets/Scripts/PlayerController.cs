@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   //detects if player is on ground and is not game over then gets the jump input if both are true
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    //sets isOnGround to true if in contact with the ground
     private void OnCollisionEnter(Collision collision)
     {
         isOnGround = true;
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
             isOnGround = true;
             dirtParticle.Play();
         }
+        //else if colides with obstacle
         else if(collision.gameObject.CompareTag("Obstacle"))
         {
             
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(crashSound, 1.0f);
 
          }
+        //stops dirt animation when laying on the ground
         if(gameOver == true)
         {
             dirtParticle.Stop();

@@ -6,15 +6,9 @@ public class MoveForward : MonoBehaviour
 {   //Move speed of the GameObject
     public float speed = 10;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
-    {
+    {   //makes animals move forward constantly
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 }
