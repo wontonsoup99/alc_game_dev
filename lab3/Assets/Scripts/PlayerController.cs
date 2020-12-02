@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     //Movement
+    //Restraints are done through colliders
     {   //X axis movement controller
         xPos = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * xPos * Time.deltaTime * speed);
