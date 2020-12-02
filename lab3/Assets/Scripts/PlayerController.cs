@@ -18,33 +18,12 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    //Movement
+    {   //X axis movement controller
         xPos = Input.GetAxis("Horizontal");
-
         transform.Translate(Vector3.right * xPos * Time.deltaTime * speed);
-
+        //Y axis movment controller
         yPos = Input.GetAxis("Vertical");
-
         transform.Translate(Vector3.forward * yPos * Time.deltaTime * speed);
-
-        if(transform.position.x < -bounds)
-        {
-            transform.position = new Vector3(-bounds, transform.position.y, transform.position.z);
-        }
-
-        if (transform.position.x > bounds)
-        {
-            transform.position = new Vector3(bounds, transform.position.y, transform.position.z);
-        }
-        if (transform.position.y < -bounds)
-        {
-            transform.position = new Vector3(transform.position.x, -bounds, transform.position.z);
-        }
-        if (transform.position.y > bounds)
-        {
-            transform.position = new Vector3(transform.position.x, bounds, transform.position.z);
-        }
-
-
     }
 }
