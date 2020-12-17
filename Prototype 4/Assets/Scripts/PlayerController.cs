@@ -15,6 +15,24 @@ public class PlayerController : MonoBehaviour
         FocalPoint = GameObject.Find("FocalPoint");
     }
 
+    public bool hasPowerup;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Powerup"))
+        {
+            hasPowerup = true;
+            Destroy(other.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && hasPowerup)
+        {
+            Debug.Log("Player collided with " + collision.gameObject + "with powerup set to " + hasPowerup);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
